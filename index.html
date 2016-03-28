@@ -6,6 +6,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.0/foundation.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
 	<link href='https://fonts.googleapis.com/css?family=Lobster|Pacifico|Bangers' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -13,16 +14,26 @@
 <main class="main">
 	<div class="row align-center signup">
 		<h1 class="logo text-center">Grumbles</h1>
-			<div class="small-9 columns text-center float-center">
-				<label>
-					<input class="text-center" type="text" placeholder="Username"></input>
-				</label>
+			<div class="small-9 columns float-center">
+				<div class="columns text-center">
+					<i id="avatar" class="material-icons">account_circle</i>
+				</div>
+				<div class="columns text-center">
+					<label>
+						<input class="text-center" type="text" placeholder="Enter your e-mail"></input>
+					</label>
+				</div>
+				<div class="columns text-center">
+					<label>
+						<input class="text-center" type="text" placeholder="Password"></input>
+					</label>
+				</div>
+				<div class="columns">
+					<button class="hollow button expanded" type="button">Next</button>
+				</div>
 			</div>
-			<div class="small-9 columns text-center float-center">
-				<label>
-					<input class="text-center" type="text" placeholder="Password"></input>
-				</label>
-			</div>
+			
+			
 		</div>
 	<!--<div style="height: 100px; width:200px;border: 1px solid white"></div>-->
 </main>
