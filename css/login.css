@@ -1,0 +1,29 @@
+
+
+.logo {
+	font-family: 'Lobster', cursive;
+	color: tomato;
+	font-size: 7em;
+}
+
+body, .main {
+	height: 100%;
+	width: 100%;	
+	background-color: gray;
+}
+
+.main {
+	border: 5px solid white;
+	display: flex;
+}
+#info {
+	width: 50%;
+	margin: auto;
+}
+.signup {
+	margin:auto;
+	display: block;
+}
+
+font-family: 'Bangers', cursive;
+font-family: 'Pacifico', cursive;
