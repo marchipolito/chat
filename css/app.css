@@ -39,8 +39,9 @@
 }
 
 #avatar {
-	font-size: 48px;
-	text-align: right;
+	font-size: 6em;
+	margin-bottom: 24px;
+	color: lightgray;
 }
 
 #sidebar {
