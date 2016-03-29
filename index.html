@@ -20,10 +20,10 @@
 					<i id="avatar" class="material-icons">account_circle</i>
 				</div>
 					<div class="slider-outer">
-						<div class="slider-inner row" style="margin:auto;">
+						<div id="slider-inner" class="slider-inner row" style="margin:auto;">
 							<div class="start columns float-center">
 								<div class="">
-									<button class="button expanded" type="button">Let's Go!</button>
+									<button id="go" class="button expanded" type="button">Let's Go!</button>
 								</div>
 							</div>
 							<div class="info columns float-center">
@@ -44,10 +44,16 @@
 						</div>
 					</div>
 			</div>
-			
-			
 		</div>
 	<!--<div style="height: 100px; width:200px;border: 1px solid white"></div>-->
 </main>
+<script>
+	$(document).ready(function(){
+		$("#go").click(function(){
+			$("#slider-inner").css({'transform':'translateX(-50%)'})
+		});
+	});
+</script>
+
 </body>
 </html>
