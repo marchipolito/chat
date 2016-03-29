@@ -25,5 +25,17 @@ body, .main {
 	display: block;
 }
 
+.slider-outer {
+	width: 100%;
+	overflow: hidden;
+	margin: auto;
+}
+
+.slider-inner {
+	width: 200%;
+	transition: all 1.0s ease-in-out;
+}
+body > main > div > div
+
 font-family: 'Bangers', cursive;
 font-family: 'Pacifico', cursive;
