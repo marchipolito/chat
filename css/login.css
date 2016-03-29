@@ -36,7 +36,14 @@ body, .main {
 	transition: all 0.5s ease-in-out;
 	transform: translateX(0%);
 }
-body > main > div > div
+#back {
+	display: none;
+	position: absolute;
+}
+#backBtn {
+	color: lightgray;
+}
+
 
 font-family: 'Bangers', cursive;
 font-family: 'Pacifico', cursive;

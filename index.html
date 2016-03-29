@@ -17,6 +17,9 @@
 		<h1 class="logo text-center">Grumbles</h1>
 			<div class="small-12 columns float-center">
 				<div class="columns text-center">
+					<div id="back">
+						<a id="backBtn" href="#"><i class="material-icons">chevron_left</i></a>
+					</div>
 					<i id="avatar" class="material-icons">account_circle</i>
 				</div>
 					<div class="slider-outer">
@@ -50,8 +53,15 @@
 <script>
 	$(document).ready(function(){
 		$("#go").click(function(){
-			$("#slider-inner").css({'transform':'translateX(-50%)'})
+			$("#slider-inner").css({'transform':'translateX(-50%)'});
+			$("#back").css({'display':'block'});
 		});
+	});
+</script>
+<script>
+	$("#backBtn").click(function(){
+		$("#slider-inner").css({'transform':'translateX(0%)'});
+		$("#back").css({'display':'none'});
 	});
 </script>
 
