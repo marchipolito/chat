@@ -38,6 +38,26 @@
 	margin-right:0;
 }
 
+#suHeader {
+	width: 100%;
+	border-top: 5px solid white;
+	border-right: 5px solid white;
+	border-left: 5px solid white;
+}
+#suHeader-inner {
+}
+.suLogo {
+	font-size: 2em;
+	font-family: 'Lobster', cursive;
+	color: tomato;
+}
+#suLogin {
+	margin: auto;
+}
+.userInfo {
+	margin: auto;
+}
+
 #avatar {
 	font-size: 6em;
 	margin-bottom: 24px;
