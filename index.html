@@ -87,7 +87,16 @@
 				console.log("Authenticated successfully with payload:", authData);
 			}
 		});
+
+		ref.onAuth(function(authData){
+		if (authData) {
+		    console.log("Authenticated with uid:", authData.uid);
+		  } else {
+		    console.log("Client unauthenticated.")
+		  }
+		});
 	});
 </script>
+
 </body>
 </html>

@@ -54,6 +54,9 @@
 #suLogin {
 	margin: auto;
 }
+#logout {
+	margin:0;
+}
 .userInfo {
 	margin: auto;
 }
