@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 	<link rel="stylesheet" type="text/css" href="css/app.css">
 	<link href='https://fonts.googleapis.com/css?family=Lobster|Pacifico|Bangers' rel='stylesheet' type='text/css'>
+	<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 </head>
 <body>
 <header></header>
@@ -34,16 +35,16 @@
 								<form>
 									<div class="columns text-center">
 										<label>
-											<input class="text-center" type="email" placeholder="Enter your e-mail" required></input>
+											<input id="email" class="text-center" type="text" placeholder="Enter your e-mail" required></input>
 										</label>
 									</div>
 									<div class="columns text-center">
 										<label>
-											<input class="text-center" type="password" placeholder="Password" required></input>
+											<input id="password" class="text-center" type="password" placeholder="Password" required></input>
 										</label>
 									</div>
 									<div class="columns">
-										<button class="button expanded" type="submit">Login</button>
+										<button id="submit" class="button expanded" type="submit">Login</button>
 									</div>
 									<p>Need an <a href="./signup/index.html">account?</a></p>
 								</form>
@@ -69,5 +70,24 @@
 	});
 </script>
 
+<script>
+	var ref = new Firebase("https://marchipolito.firebaseio.com");
+	$("#submit").click(function(e){
+		e.preventDefault();
+		var email = $("#email").val();
+		var password = $("#password").val();
+
+		ref.authWithPassword({
+			"email":email,
+			"password":password
+		}, function(error,authData){
+			if (error) {
+				console.log("Login Failed!",error);
+			} else {
+				console.log("Authenticated successfully with payload:", authData);
+			}
+		});
+	});
+</script>
 </body>
 </html>
