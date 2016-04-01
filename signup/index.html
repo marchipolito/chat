@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/login.css">
 	<link rel="stylesheet" type="text/css" href="../css/app.css">
 	<link href='https://fonts.googleapis.com/css?family=Lobster|Pacifico|Bangers' rel='stylesheet' type='text/css'>
+	<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 </head>
 <body>
 <header id="suHeader">
@@ -23,23 +24,23 @@
 	<form class="userInfo">
 		<div class="row">
 		<label class="small-6 columns">First Name
-			<div id="fname" class="fname">
-				<input type="text" placeholder="" required></input>
+			<div class="fname">
+				<input id="fname" type="text" placeholder="" required></input>
 			</div>
 		</label>
 		<label class="small-6 columns">Last Name
-			<div id="lname" class="lname">
-				<input type="text" placeholder="" required></input>
+			<div class="lname">
+				<input id="lname" type="text" placeholder="" required></input>
 			</div>
 		</label>
 		<label class="small-12 columns">E-mail
-			<input type="email" placeholder="" required></input>
+			<input id="email" type="text" placeholder="" required></input>
 		</label>
 		<label class="small-12 columns">Create Password
-			<input type="password" placeholder="" required></input>
+			<input id="password" type="password" placeholder="" required></input>
 		</label>
 		<label class="small-12 columns">Retype Password
-			<input type="password" placeholder="" required></input>
+			<input id="confirmPassword" type="password" placeholder="" required></input>
 		</label>
 		<div class="small-12 columns">
 			<button id="createAccount" class="button expanded" type="submit">Create account</button>
@@ -47,5 +48,38 @@
 	</div>
 	</form>
 </main>
+
+<script>
+	var ref = new Firebase("https://marchipolito.firebaseio.com");
+	$('#createAccount').click(function(e){
+		e.preventDefault();
+
+		var fname = $("#fname").val();
+		var lname = $("#lname").val();
+		var email = $("#email").val();
+		var password = $("#password").val();
+		var confirmPassword = $("#confirmPassword").val();
+		
+		ref.createUser({
+		  email:email,
+		  password:password
+		}, function(error, userData) {
+		  if (error) {
+		    switch (error.code) {
+		      case "EMAIL_TAKEN":
+		        console.log("The new user account cannot be created because the email is already in use.");
+		        break;
+		      case "INVALID_EMAIL":
+		        console.log("The specified email is not a valid email.");
+		        break;
+		      default:
+		        console.log("Error creating user:", error);
+		    }
+		  } else {
+		    console.log("Successfully created user account with uid:", userData.uid);
+		  }
+		});
+	});
+</script>
 </body>
 </html>
