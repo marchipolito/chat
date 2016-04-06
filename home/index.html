@@ -28,9 +28,21 @@
 				console.log("logged out: ",l.uid);
 			} else {
 				console.log("Not logged in");
+				window.location = "../"
 			}
 		});
 	});
+</script>
+
+<script>
+	var	ref = new Firebase("https://marchipolito.firebaseio.com");
+	var authData = ref.getAuth();
+	if (authData) {
+		console.log("Authenticated user with uid:", authData.uid);
+	} else {
+		console.log("Not logged in")
+		window.location = "../"
+	}
 </script>
 </body>
 </html>
