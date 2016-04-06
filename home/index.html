@@ -10,6 +10,16 @@
 	<link rel="stylesheet" type="text/css" href="../css/app.css">
 	<link href='https://fonts.googleapis.com/css?family=Lobster|Pacifico|Bangers' rel='stylesheet' type='text/css'>
 	<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+	<script>
+		var	ref = new Firebase("https://marchipolito.firebaseio.com");
+		var authData = ref.getAuth();
+		if (authData) {
+			console.log("Authenticated user with uid:", authData.uid);
+		} else {
+			console.log("Not logged in")
+			window.location = "../"
+		}
+	</script>
 </head>
 <header>
 	<div class="row">
@@ -34,15 +44,6 @@
 	});
 </script>
 
-<script>
-	var	ref = new Firebase("https://marchipolito.firebaseio.com");
-	var authData = ref.getAuth();
-	if (authData) {
-		console.log("Authenticated user with uid:", authData.uid);
-	} else {
-		console.log("Not logged in")
-		window.location = "../"
-	}
-</script>
+
 </body>
 </html>
