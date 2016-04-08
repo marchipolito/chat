@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.0/foundation-flex.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.0/foundation.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/home.css">
 	<link rel="stylesheet" type="text/css" href="../css/login.css">
 	<link rel="stylesheet" type="text/css" href="../css/app.css">
 	<link href='https://fonts.googleapis.com/css?family=Lobster|Pacifico|Bangers' rel='stylesheet' type='text/css'>
@@ -14,6 +15,7 @@
 		var	ref = new Firebase("https://marchipolito.firebaseio.com");
 		var authData = ref.getAuth();
 		if (authData) {
+			$("body").removeClass("hide");
 			console.log("Authenticated user with uid:", authData.uid);
 		} else {
 			console.log("Not logged in")
@@ -21,6 +23,7 @@
 		}
 	</script>
 </head>
+<body class="hide">
 <header>
 	<div class="row">
 		<div class="columns">
@@ -28,14 +31,12 @@
 		</div>
 	</div>
 </header>
-<body>
-
 <script>
 	var ref = new Firebase("https://marchipolito.firebaseio.com");
 	$("#logout").click(function(e){
 		ref.unauth(function(l){
 			if (l){
-				console.log("logged out: ",l.uid);
+				console.log("logged out: ",authData.uid);
 			} else {
 				console.log("Not logged in");
 				window.location = "../"
