@@ -10,18 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/login.css">
 	<link rel="stylesheet" type="text/css" href="../css/app.css">
 	<link href='https://fonts.googleapis.com/css?family=Lobster|Pacifico|Bangers' rel='stylesheet' type='text/css'>
-	<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
-	<script>
-		var	ref = new Firebase("https://marchipolito.firebaseio.com");
-		var authData = ref.getAuth();
-		if (authData) {
-			$("body").removeClass("hide");
-			console.log("Authenticated user with uid:", authData.uid);
-		} else {
-			console.log("Not logged in")
-			window.location = "../"
-		}
-	</script>
+	<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>	
 </head>
 <body class="hide">
 <header>
@@ -31,6 +20,17 @@
 		</div>
 	</div>
 </header>
+<script>
+	var	ref = new Firebase("https://marchipolito.firebaseio.com");
+	var authData = ref.getAuth();
+	if (authData) {
+		console.log("Authenticated user with uid:", authData.uid);
+		$("body").removeClass("hide");
+	} else {
+		console.log("Not logged in")
+		window.location = "../"
+	}
+</script>
 <script>
 	var ref = new Firebase("https://marchipolito.firebaseio.com");
 	$("#logout").click(function(e){
