@@ -24,12 +24,14 @@
 
 
 #header {
-	background: linear-gradient(#7B7676,#D8D8D8);
-	height: 4em;
+	/*background: linear-gradient(#7B7676,#D8D8D8);
+	height: 4em;*/
 	width: 100%;
 }
+
 .header-inner {
 	height:inherit;
+	border-bottom: 5px solid white;
 }
 
 .header-inner.row {
@@ -55,7 +57,7 @@
 	margin: auto;
 }
 #logout {
-	margin:0;
+	margin: auto;
 }
 .userInfo {
 	margin: auto;
@@ -86,6 +88,9 @@
 	background-color: gray;
 }
 
+#menu {
+	border-right: 5px solid white;
+}
 label {
 	color: white;
 }
