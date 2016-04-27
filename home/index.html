@@ -13,7 +13,24 @@
 	<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>	
 </head>
 <body class="main hide">
-<header id="header">
+<div class="off-canvas-wrapper">
+    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+      <div class="off-canvas position-left" id="offCanvas" data-off-canvas></div>
+      <div class="off-canvas-content" data-off-canvas-content>
+      	<header id="header">
+			<div class="header-inner row align-middle">
+				<div id="menu" class="float-left">
+					<a data-toggle="offCanvas"><i class="material-icons">menu</i></a>
+				</div>
+				<div class="columns">
+					<button id="logout" class="button float-right" type="submit">Logout</button>
+				</div>
+			</div>
+		</header>
+      </div>
+    </div>
+  </div>
+<!-- <header id="header">
 	<div class="header-inner row align-middle">
 		<div id="menu" class="float-left">
 			<a href=""><i class="material-icons">menu</i></a>
@@ -22,7 +39,11 @@
 			<button id="logout" class="button float-right" type="submit">Logout</button>
 		</div>
 	</div>
-</header>
+</header> -->
+<script>
+	$(document).foundation();
+</script>
+
 <script>
 	var	ref = new Firebase("https://marchipolito.firebaseio.com");
 	var authData = ref.getAuth();
@@ -47,7 +68,6 @@
 		});
 	});
 </script>
-
 
 </body>
 </html>
