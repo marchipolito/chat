@@ -1,6 +1,10 @@
 .hide {
 	display: none;
 }
-#header {
-	background-color: gray;
+
+li {
+	list-style: none;
+}
+#offCanvas {
+	height: 100;
 }
