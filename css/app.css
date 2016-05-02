@@ -43,7 +43,7 @@
 
 .header-inner {
 	height:inherit;
-	border-bottom: 5px solid white;
+	/*border-bottom: 5px solid white;*/
 }
 
 .header-inner.row {
@@ -54,9 +54,9 @@
 
 #suHeader {
 	width: 100%;
-	border-top: 5px solid white;
+	/*border-top: 5px solid white;
 	border-right: 5px solid white;
-	border-left: 5px solid white;
+	border-left: 5px solid white;*/
 }
 #suHeader-inner {
 }
@@ -101,7 +101,7 @@
 }
 
 #menu {
-	border-right: 5px solid white;
+	/*border-right: 5px solid white;*/
 }
 label {
 	color: white;
